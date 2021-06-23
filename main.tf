@@ -67,8 +67,8 @@ module "azure" {
   image_rg = var.image_resource
   lb_ip = azurerm_public_ip.lb-ip.id
   tls = var.enable_tls
-  vault_cert = var.own_certs ? var.cert : module.tls-cert.vault_crt
-  vault_key = var.own_certs ? var.cert_key : module.tls-cert.vault_key
-  ca_cert = var.own_certs ? var.ca_cert : module.tls-cert.vault_ca
+  vault_cert = var.own_certs != "" ? var.cert : module.tls-cert.vault_crt
+  vault_key = var.own_certs != ""? var.cert_key : module.tls-cert.vault_key
+  ca_cert = var.own_certs != "" ? var.ca_cert : module.tls-cert.vault_ca
   vm_passwd = var.vmpasswd
 }
