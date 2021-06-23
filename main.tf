@@ -69,6 +69,6 @@ module "azure" {
   tls = var.enable_tls
   vault_cert = var.own_certs  ? var.cert : module.tls-cert.vault_crt[0]
   vault_key = var.own_certs ? var.cert_key : module.tls-cert.vault_key[0]
-  ca_cert = var.own_certs ? var.ca_cert : module.tls-cert.vault_ca[0]
+  ca_cert = var.own_certs ? var.ca_cert : module.tls-cert.vault_ca
   vm_passwd = var.vmpasswd
 }
