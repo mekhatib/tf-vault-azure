@@ -31,7 +31,7 @@ provider "azurerm" {
 resource "azurerm_public_ip" "lb-ip" {
     name = "loadbalancer-ip"
     location = var.region
-    resource_group_name = azurerm_resource_group.rg.name
+    resource_group_name = var.resource_group
     allocation_method = "Static"
     # Standard SKU is needed if we want HTTPS health probe from the Load Balancer
     sku = "Standard"
@@ -57,7 +57,7 @@ module "azure" {
   source = "./modules/azure"
   
   cluster = var.cluster_name
-  az_resource_group = azurerm_resource_group.rg.name
+  az_resource_group = var.resource_group
   az_region = var.region
   az_machine = var.size
   owner = var.owner
