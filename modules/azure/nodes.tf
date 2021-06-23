@@ -97,8 +97,10 @@ resource "azurerm_virtual_machine" "vault-vm" {
       node_name     = local.hostnames[count.index],
       tls_disable = var.tls == "true" ? 0 : 1,
       me_ca         = var.ca_cert,
-      me_cert       = element(var.vault_cert,count.index),
-      me_key        = element(var.vault_key,count.index),
+      me_cert       = var.vault_cert,
+      me_key        = var.vault_key,
+     # me_cert       = element(var.vault_cert,count.index),
+     # me_key        = element(var.vault_key,count.index),
       http = var.tls ==  "true" ? "https" : "http",
       vault_servers    = var.nodes
     }) 
