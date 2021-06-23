@@ -17,16 +17,16 @@ provider "azurerm" {
 }
 
 # Creating the resource group for the vms
-resource "azurerm_resource_group" "rg" {
-    name = var.resource_group
-    location = var.region
+#resource "azurerm_resource_group" "rg" {
+#    name = var.resource_group
+#    location = var.region
 
-    tags = {
-        owner = var.owner
-        Team = "HashiSE" 
-        DoNotDelete = "True"  
-    }
-}
+#    tags = {
+#        owner = var.owner
+#        Team = "HashiSE" 
+ #       DoNotDelete = "True"  
+#    }
+#}
 
 resource "azurerm_public_ip" "lb-ip" {
     name = "loadbalancer-ip"
