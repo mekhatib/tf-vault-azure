@@ -8,14 +8,14 @@ variable "cluster" {
   default = "vault-dc-cluster"
 }
 variable "az_resource_group" {
-  default = "dcanadillas-rg"
+  default = "mahil-rg"
 }
 
 variable "az_region" {
-  default = "westeurope"
+  default = "northeurope"
 }
 variable "az_zone" {
-    default = "westeurope1"
+    default = "northeurope1"
 }
 variable "owner" {
   
@@ -32,11 +32,11 @@ variable "client_secret" {
 }
 variable "custom_image" {
   description = "Custom image to use for Vault VM"
-  default = "Ubuntu-Vault-1_4_2"
+  default = "Ubuntu-Vault-1_7_3"
 }
 variable "image_rg" {
   description = "Resource group name for the custom image to use"
-  default = "dcanadillas-images"
+  default = "mahil-rg"
 }
 variable "lb_ip" {
   description = "Load Balancer IP"
